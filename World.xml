@@ -9,36 +9,13 @@
     <Zone Name="the #WEST side of a farmhouse" IsDark="False"> You are standing outside of an unpainted wooden farmhouse, barely more than a shack. The sky is cloudy and casts a slightly reddish twilight light over everything. In every direction as far as the eye can see the land is flat, and knee-high grass waves in a cold breeze that smells of ocean air despite no sign of the sea nearby. You don't see the archway anywhere. | The peaks of mountaintops can be seen just over the horizon. They must be hundreds of miles away.</Zone>
     <Zone Name="the farmhouse #INTERIOR" IsDark="False">The interior of the farmhouse is dim and dusty. An unpowered incandescent lightbulb in an undecorated fixture hangs from a rafter in the center of the room, but the connected switch mounted on the wall near the door does nothing. A stone fireplace dominates one wall of the one-room building, where the charred remains in the hearth resemble bones more than logs. Through an opening in one corner of the wooden floor, stairs lead down.</Zone>
     <Zone Name="the farmhouse #BASEMENT" IsDark="True">The basement walls match the farmhouse above but the floor is solid stone. An eight foot tall marble statue stands alone in this room, its arms outstreched toward you. It is dressed in a circus clown costume with its face painted in a malevolent glare. You don't think it was standing in that particular spot the last time you were in this room.</Zone>
-    
-    <Zone Name="a #TUNNEL" IsDark="False">TESTING MODE // This tunnel leads to the placeholder/debugging content.</Zone>
-    
-    <Zone Name="the #STUDY" IsDark="False">A spacious office with a large desk and a fireplace.</Zone>
-    <Zone Name="the #BILLIARD room" IsDark="False">A gaming room featuring a billiard table.</Zone>
-    <Zone Name="the #LOUNGE" IsDark="False">A relaxing space.</Zone>
-    <Zone Name="the #LIBRARY" IsDark="False">The walls are lined with bookcases.</Zone>
-    <Zone Name="the #HALL" IsDark="False">TESTING MODE // This is the start of the placeholder/debugging content.</Zone>
-    <Zone Name="the #DINING room" IsDark="False">The large dining table could seat six or seven.</Zone>
-    <Zone Name="the #CONSERVATORY" IsDark="False">A humid sunroom with a variety of plants.</Zone>
-    <Zone Name="the #BALLROOM" IsDark="False">An opulent ballroom, empty save for a grand piano.</Zone>
-    <Zone Name="the #KITCHEN" IsDark="True">Yep. It's a kitchen.</Zone>
+    <Zone Name="a #TUNNEL" IsDark="False">[tunnel text]</Zone>
+    <Zone Name="the #ATRIUM" IsDark="False">[atrium text]</Zone>
   </Zones>
   <StartingZone>CHAMBER</StartingZone>
   <Items>
     <Item Name="a typed #NOTE" StartLocation="CHAMBER" Type="X">A sheet of paper with typed text: "Instructions: (1) Pick up the scepter. (2) Walk through the archway. (3) You should find yourself within 100 meters of the archway. Observe your surroundings and find the archway. IMPORTANT: DO NOT touch or pick up anything. DO NOT enter any structure. (4) Carry the scepter through the archway again."</Item>
     <Item Name="a strange #SCEPTER" StartLocation="CHAMBER" Type="X">A strange looking scepter with a red gem.</Item>
-    
-    <Item Name="an unlit #LAMP|a lit LAMP" StartLocation="DINING" Type="Light" ActivateMessage="You light the lamp." DeactivateMessage="You darken the lamp.">A device that can be used as a light source.|A light source, shining brightly.</Item>
-    <Item Name="a heavy lead #PIPE" StartLocation="STUDY" Type="XYtoZ" Y="ROPE" Z="BAR" CombineMessage="You wrap the rope around the pipe.">A section of old bent pipe made of lead. Fairly heavy.</Item>
-    <Item Name="a length of #ROPE" StartLocation="LOUNGE" Type="XYtoZ" Y="PIPE" Z="BAR" CombineMessage="You wrap the rope around the pipe.">A short length of sturdy rope with some fraying near the middle.</Item>
-    <Item Name="a rope-wrapped #BAR" StartLocation="NONE" Type="toX">A piece of pipe with a rope wrapped around it.</Item>
-    <Item Name="a #REVOLVER" StartLocation="LIBRARY" Type="XtoYZ" Y="GUN" Z="BULLETS" UseMessage="You unload the revolver and separate the GUN and BULLETS.">A handgun with a six-chamber cylinder. One round has already been fired.</Item>
-    <Item Name="an empty #GUN" StartLocation="NONE" Type="XYtoZ" Y="BULLETS" Z="REVOLVER" CombineMessage="You load the bullets into the revolver.">A fully unloaded handgun with a six-chamber cylinder.</Item>
-    <Item Name="five #BULLETS" StartLocation="NONE" Type="XYtoZ" Y="GUN" Z="REVOLVER" CombineMessage="You load the bullets into the revolver.">A small handfull of bullets.</Item>
-    <Item Name="a large #WRENCH" StartLocation="CONSERVATORY" Type="X">A very large wrench with some damage. Looks like it was dropped.</Item>
-    <Item Name="a hefty #CANDLESTICK" StartLocation="BALLROOM" Type="X">A large golden candlestick. It was cleaned recently.</Item>
-    <Item Name="a sharp #KNIFE" StartLocation="KITCHEN" Type="X">A dagger with a long sharp blade. The very tip is broken off.</Item>
-    <Item Name="the conservatory #KEY" StartLocation="BALLROOM" Type="Key">A plain-looking key.</Item>
-    <Item Name="a #TOWEL" StartLocation="NONE" Type="X">Don't panic.</Item>
   </Items>
   <ZoneConnections>
     <Connection Start="CHAMBER" Direction="In" End="SOUTH" OneWay="True" />
@@ -53,18 +30,6 @@
     <Connection Start="NORTH" Direction="In" End="INTERIOR" />
     <Connection Start="INTERIOR" Direction="Down" End="BASEMENT" />
     <Connection Start="BASEMENT" Direction="West" End="TUNNEL" />
-    
-    <Connection Start="TUNNEL" Direction="Down" End="HALL" />
-    
-    <Connection Start="STUDY" Direction="East" End="BILLIARD" />
-    <Connection Start="BILLIARD" Direction="East" End="LOUNGE" />
-    <Connection Start="STUDY" Direction="South" End="LIBRARY" />
-    <Connection Start="BILLIARD" Direction="South" End="HALL" />
-    <Connection Start="LOUNGE" Direction="South" End="DINING" />
-    <Connection Start="LIBRARY" Direction="East" End="HALL" />
-    <Connection Start="HALL" Direction="East" End="DINING" />
-    <Connection Start="HALL" Direction="South" End="BALLROOM" />
-    <Connection Start="DINING" Direction="South" End="KITCHEN" />
-    <Connection Start="CONSERVATORY" Direction="East" End="BALLROOM" Key="KEY" />
+    <Connection Start="TUNNEL" Direction="West" End="ATRIUM" />
   </ZoneConnections>
 </Root>
