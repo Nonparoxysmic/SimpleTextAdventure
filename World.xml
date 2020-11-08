@@ -10,7 +10,18 @@
     <Zone Name="the farmhouse #INTERIOR" IsDark="False">The interior of the farmhouse is dim and dusty. An unpowered incandescent lightbulb in an undecorated fixture hangs from a rafter in the center of the room, but the connected switch mounted on the wall near the door does nothing. A stone fireplace dominates one wall of the one-room building, where the charred remains in the hearth resemble bones more than logs. Through an opening in one corner of the wooden floor, stairs lead down.</Zone>
     <Zone Name="the farmhouse #BASEMENT" IsDark="True">The basement walls match the farmhouse above but the floor is solid stone. An eight foot tall marble statue stands alone in this room, its arms outstreched toward you. It is dressed in a circus clown costume with its face painted in a malevolent glare. You don't think it was standing in that particular spot the last time you were in this room.</Zone>
     <Zone Name="a #TUNNEL" IsDark="False">[tunnel text]</Zone>
-    <Zone Name="the #ATRIUM" IsDark="False">[atrium text]</Zone>
+    <Zone Name="an #ATRIUM" IsDark="False">[atrium text]</Zone>
+
+    <Zone Name="a #KITCHEN" IsDark="False">[kitchen text]</Zone>
+    <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
+    <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
+    <Zone Name="a #GREENHOUSE" IsDark="False">[greenhouse text]</Zone>
+    <Zone Name="an #OFFICE" IsDark="False">[office text]</Zone>
+    <Zone Name="a #BALCONY" IsDark="False">[balcony text]</Zone>
+    <Zone Name="a #BATHYSPHERE" IsDark="False">[bathysphere text]</Zone>
+    <Zone Name="an indoor #POOL" IsDark="False">[pool text]</Zone>
+    <Zone Name="#UNDERWATER" IsDark="False">[underwater text]</Zone>
+    <Zone Name="a #GARAGE" IsDark="False">[garage text]</Zone>
   </Zones>
   <StartingZone>CHAMBER</StartingZone>
   <Items>
