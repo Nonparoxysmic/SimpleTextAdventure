@@ -9,9 +9,9 @@
     <Zone Name="the #WEST side of a farmhouse" IsDark="False"> You are standing outside of an unpainted wooden farmhouse, barely more than a shack. The sky is cloudy and casts a slightly reddish twilight light over everything. In every direction as far as the eye can see the land is flat, and knee-high grass waves in a cold breeze that smells of ocean air despite no sign of the sea nearby. You don't see the archway anywhere. | The peaks of mountaintops can be seen just over the horizon. They must be hundreds of miles away.</Zone>
     <Zone Name="the farmhouse #INTERIOR" IsDark="False">The interior of the farmhouse is dim and dusty. An unpowered incandescent lightbulb in an undecorated fixture hangs from a rafter in the center of the room, but the connected switch mounted on the wall near the door does nothing. A stone fireplace dominates one wall of the one-room building, where the charred remains in the hearth resemble bones more than logs. Through an opening in one corner of the wooden floor, stairs lead down.</Zone>
     <Zone Name="the farmhouse #BASEMENT" IsDark="True">The basement walls match the farmhouse above but the floor is solid stone. An eight foot tall marble statue stands alone in this room, its arms outstreched toward you. It is dressed in a circus clown costume with its face painted in a malevolent glare. You don't think it was standing in that particular spot the last time you were in this room.</Zone>
-    <Zone Name="a #TUNNEL" IsDark="False">[tunnel text]</Zone>
+    <Zone Name="a #TUNNEL" IsDark="False">This long, narrow concrete tunnel is lined with orange emergency lights, glowing dimly. The low ceiling forces you to duck slightly. The east end of the tunnel disappears into darkness, while the west end of the tunnel exits into a brightly lit room.</Zone>
     <Zone Name="an #ATRIUM" IsDark="False">[atrium text]</Zone>
-
+    
     <Zone Name="a #KITCHEN" IsDark="False">[kitchen text]</Zone>
     <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
     <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
