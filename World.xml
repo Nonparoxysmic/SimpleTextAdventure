@@ -16,12 +16,13 @@
     <Zone Name="a #THEATER" IsDark ="True">[theater text]</Zone>
     <Zone Name="a #BAR" IsDark ="False">[bar text]</Zone>
     <Zone Name="a #FOYER" IsDark ="False">[foyer text]</Zone>
-    
     <Zone Name="a #KITCHEN" IsDark="False">[kitchen text]</Zone>
+    <Zone Name="an #ALLEYWAY" IsDark="False">[alleyway text]</Zone>
+    <Zone Name="an #OFFICE" IsDark="False">[office text]</Zone>
+    
     <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
     <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
     <Zone Name="a #GREENHOUSE" IsDark="False">[greenhouse text]</Zone>
-    <Zone Name="an #OFFICE" IsDark="False">[office text]</Zone>
     <Zone Name="a #BALCONY" IsDark="False">[balcony text]</Zone>
     <Zone Name="a #BATHYSPHERE" IsDark="False">[bathysphere text]</Zone>
     <Zone Name="an indoor #POOL" IsDark="False">[pool text]</Zone>
@@ -48,7 +49,12 @@
     <Connection Start="BASEMENT" Direction="West" End="TUNNEL" />
     <Connection Start="TUNNEL" Direction="West" End="ATRIUM" />
     <Connection Start="ATRIUM" Direction="West" End="CONCOURSE" />
-    <Connection Start="ATRIUM" Direction="South" End="Foyer" />
+    <Connection Start="ATRIUM" Direction="North" End="KITCHEN" />
+    <Connection Start="KITCHEN" Direction="West" End="CAFETERIA" />
+    <Connection Start="KITCHEN" Direction="North" End="ALLEYWAY" />
+    <Connection Start="ALLEYWAY" Direction="North" End="OFFICE" />
+    <Connection Start="OFFICE" Direction="North" End="FOYER" />
+    <Connection Start="FOYER" Direction="North" End="ATRIUM" />
     <Connection Start="CONCOURSE" Direction="North" End="CAFETERIA" />
     <Connection Start="CONCOURSE" Direction="West" End="THEATER" />
     <Connection Start="CONCOURSE" Direction="South" End="BAR" />
