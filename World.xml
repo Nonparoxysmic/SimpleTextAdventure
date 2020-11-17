@@ -19,6 +19,7 @@
     <Zone Name="a #KITCHEN" IsDark="False">[kitchen text]</Zone>
     <Zone Name="an #ALLEYWAY" IsDark="False">[alleyway text]</Zone>
     <Zone Name="an #OFFICE" IsDark="False">[office text]</Zone>
+    <Zone Name="a #CELLAR" IsDark="True">[cellar text]</Zone>
     
     <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
     <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
@@ -28,6 +29,7 @@
     <Zone Name="an indoor #POOL" IsDark="False">[pool text]</Zone>
     <Zone Name="#UNDERWATER" IsDark="False">[underwater text]</Zone>
     <Zone Name="a #GARAGE" IsDark="False">[garage text]</Zone>
+    <Zone Name="a dark and ominous #STAIRCASE" IsDark="True">[staircase text]</Zone>
   </Zones>
   <StartingZone>CHAMBER</StartingZone>
   <Items>
@@ -52,6 +54,7 @@
     <Connection Start="ATRIUM" Direction="North" End="KITCHEN" />
     <Connection Start="KITCHEN" Direction="West" End="CAFETERIA" />
     <Connection Start="KITCHEN" Direction="North" End="ALLEYWAY" />
+    <Connection Start="KITCHEN" Direciton="Down" End="CELLAR" />
     <Connection Start="ALLEYWAY" Direction="North" End="OFFICE" />
     <Connection Start="OFFICE" Direction="North" End="FOYER" />
     <Connection Start="FOYER" Direction="North" End="ATRIUM" />
@@ -59,5 +62,6 @@
     <Connection Start="CONCOURSE" Direction="West" End="THEATER" />
     <Connection Start="CONCOURSE" Direction="South" End="BAR" />
     <Connection Start="BAR" Direction="East" End="FOYER" />
+    <Connection Start="STAIRCASE" Direction="Down" End="STAIRCASE" OneWay="True" />
   </ZoneConnections>
 </Root>
