@@ -54,7 +54,7 @@
     <Connection Start="ATRIUM" Direction="North" End="KITCHEN" />
     <Connection Start="KITCHEN" Direction="West" End="CAFETERIA" />
     <Connection Start="KITCHEN" Direction="North" End="ALLEYWAY" />
-    <Connection Start="KITCHEN" Direciton="Down" End="CELLAR" />
+    <Connection Start="KITCHEN" Direction="Down" End="CELLAR" />
     <Connection Start="ALLEYWAY" Direction="North" End="OFFICE" />
     <Connection Start="OFFICE" Direction="North" End="FOYER" />
     <Connection Start="FOYER" Direction="North" End="ATRIUM" />
