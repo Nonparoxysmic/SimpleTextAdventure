@@ -54,7 +54,15 @@ namespace SimpleTextAdventure
                         player.ExamineAction(parameters);
                         break;
                     case Command.Wait:
-                        Program.PrintWrappedText("You wait. Nothing interesting happens.");
+                        if (player.currentZone.codeName == "underwater")
+                        {
+                            Program.PrintWrappedText("You drown.");
+                            gameOver = true;
+                        }
+                        else
+                        {
+                            Program.PrintWrappedText("You wait. Nothing interesting happens.");
+                        }
                         break;
                     case Command.Inventory:
                         player.PrintInventory();

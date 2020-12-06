@@ -12,24 +12,33 @@
     <Zone Name="a #TUNNEL" IsDark="False">This long, narrow concrete tunnel is lined with orange emergency lights, glowing dimly. The low ceiling forces you to duck slightly. The east end of the tunnel disappears into darkness, while the west end of the tunnel exits into a brightly lit room.</Zone>
     <Zone Name="an #ATRIUM" IsDark="False">Sunlight shines down from the clear blue sky through the glass ceiling of this expansive room. The center of the room features a bubbling fountain, and flower beds containing large ferns are scattered around the red and gold carpeted floor. Wide hallways lead to the south and west. On the north wall, a pair of aluminum swinging doors seem to lead to a kitchen.</Zone>
     <Zone Name="a #CONCOURSE" IsDark ="False">The room is a large open area with tile floors and florescent lighting. Most of the room is filled with tables and chairs, serving as a food court between the cafeteria on the north side and the bar to the south. Scattered kiosks offer items such as cell phone cases, key chains, and surgical instruments. The entire west wall is the entrance to a movie theater. The posters are for movies familiar to you, but the actors each appear to have random extra body parts.</Zone>
+    <Zone Name="a #FOYER" IsDark ="False">[foyer text]</Zone>
+    <Zone Name="a #KITCHEN" IsDark="False">[kitchen text]</Zone>
+    <Zone Name="a #CELLAR" IsDark="True">[cellar text]</Zone>
     <Zone Name="a #CAFETERIA" IsDark ="False">[cafeteria text]</Zone>
     <Zone Name="a #THEATER" IsDark ="True">[theater text]</Zone>
     <Zone Name="a #BAR" IsDark ="False">[bar text]</Zone>
-    <Zone Name="a #FOYER" IsDark ="False">[foyer text]</Zone>
-    <Zone Name="a #KITCHEN" IsDark="False">[kitchen text]</Zone>
-    <Zone Name="an #ALLEYWAY" IsDark="False">[alleyway text]</Zone>
-    <Zone Name="an #OFFICE" IsDark="False">[office text]</Zone>
-    <Zone Name="a #CELLAR" IsDark="True">[cellar text]</Zone>
-    
-    <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
-    <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
-    <Zone Name="a #GREENHOUSE" IsDark="False">[greenhouse text]</Zone>
-    <Zone Name="a #BALCONY" IsDark="False">[balcony text]</Zone>
     <Zone Name="a #BATHYSPHERE" IsDark="False">[bathysphere text]</Zone>
+    <Zone Name="an #OFFICE" IsDark="False">[office text]</Zone>
+    <Zone Name="a #GYM" IsDark="False">[gym text]</Zone>
     <Zone Name="an indoor #POOL" IsDark="False">[pool text]</Zone>
     <Zone Name="#UNDERWATER" IsDark="False">[underwater text]</Zone>
+    <Zone Name="a dark and ominous #STAIRCASE" IsDark="True">It is too dark to see anything. Your light source seems to have no effect.</Zone>
+    <Zone Name="an #ALLEYWAY" IsDark="False">[alleyway text]</Zone>
+    <Zone Name="a #GREENHOUSE" IsDark="False">[greenhouse text]</Zone>
+    <Zone Name="a #CHAPEL" IsDark="False">[chapel text]</Zone>
+    <Zone Name="a #CRYPT" IsDark="False">[crypt text]</Zone>
+    <Zone Name="some #CATACOMBS" IsDark="False">[catacombs text]</Zone>
     <Zone Name="a #GARAGE" IsDark="False">[garage text]</Zone>
-    <Zone Name="a dark and ominous #STAIRCASE" IsDark="True">[staircase text]</Zone>
+    <Zone Name="some #BARRACKS" IsDark="False">[barracks text]</Zone>
+    <Zone Name="a #BEDROOM" IsDark="False">[bedroom text]</Zone>
+    <Zone Name="a #CLOSET" IsDark="False">[closet text]</Zone>
+    <Zone Name="a #BATHROOM" IsDark="False">[bathroom text]</Zone>
+    <Zone Name="a #BALCONY" IsDark="False">[balcony text]</Zone>
+    <Zone Name="a #HALL" IsDark="False">[bedroom text]</Zone>
+    <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
+    <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
+    <Zone Name="a #WORKSHOP" IsDark="False">[workshop text]</Zone>
   </Zones>
   <StartingZone>CHAMBER</StartingZone>
   <Items>
@@ -52,16 +61,36 @@
     <Connection Start="TUNNEL" Direction="West" End="ATRIUM" />
     <Connection Start="ATRIUM" Direction="West" End="CONCOURSE" />
     <Connection Start="ATRIUM" Direction="North" End="KITCHEN" />
+    <Connection Start="ATRIUM" Direction="South" End="FOYER" />
     <Connection Start="KITCHEN" Direction="West" End="CAFETERIA" />
     <Connection Start="KITCHEN" Direction="North" End="ALLEYWAY" />
     <Connection Start="KITCHEN" Direction="Down" End="CELLAR" />
     <Connection Start="ALLEYWAY" Direction="North" End="OFFICE" />
+    <Connection Start="ALLEYWAY" Direction="Up" End="BEDROOM" />
+    <Connection Start="ALLEYWAY" Direction="In" End="GREENHOUSE" />
+    <Connection Start="ALLEYWAY" Direction="East" End="CHAPEL" />
     <Connection Start="OFFICE" Direction="North" End="FOYER" />
-    <Connection Start="FOYER" Direction="North" End="ATRIUM" />
+    <Connection Start="OFFICE" Direction="West" End="GYM" />
+    <Connection Start="OFFICE" Direction="Down" End="STAIRCASE" />
+    <Connection Start="STAIRCASE" Direction="Down" End="STAIRCASE" OneWay="True" />
+    <Connection Start="GYM" Direction="North" End="POOL" />
+    <Connection Start="POOL" Direction="Down" End="UNDERWATER" />
+    <Connection Start="FOYER" Direction="West" End="BAR" />
     <Connection Start="CONCOURSE" Direction="North" End="CAFETERIA" />
     <Connection Start="CONCOURSE" Direction="West" End="THEATER" />
     <Connection Start="CONCOURSE" Direction="South" End="BAR" />
-    <Connection Start="BAR" Direction="East" End="FOYER" />
-    <Connection Start="STAIRCASE" Direction="Down" End="STAIRCASE" OneWay="True" />
+    <Connection Start="BAR" Direction="Down" End="BATHYSPHERE" />
+    <Connection Start="CHAPEL" Direction="North" End="GARAGE" />
+    <Connection Start="CHAPEL" Direction="East" End="BARRACKS" />
+    <Connection Start="CHAPEL" Direction="Down" End="CRYPT" />
+    <Connection Start="CRYPT" Direction="Down" End="CATACOMBS" />
+    <Connection Start="WORKSHOP" Direction="South" End="LABORATORY" />
+    <Connection Start="LABORATORY" Direction="South" End="HALL" />
+    <Connection Start="HALL" Direction="South" End="LIBRARY" />
+    <Connection Start="HALL" Direction="West" End="BEDROOM" />
+    <Connection Start="BEDROOM" Direction="West" End="BATHROOM" />
+    <Connection Start="BEDROOM" Direction="In" End="CLOSET" />
+    <Connection Start="BEDROOM" Direction="South" End="BALCONY" />
+    <Connection Start="BALCONY" Direction="Down" End="ATRIUM" OneWay="True" />
   </ZoneConnections>
 </Root>
