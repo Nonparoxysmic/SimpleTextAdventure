@@ -20,8 +20,8 @@
     <Zone Name="a #BAR" IsDark ="False">[bar text]</Zone>
     <Zone Name="a #BATHYSPHERE" IsDark="False">[bathysphere text]</Zone>
     <Zone Name="an #OFFICE" IsDark="False">This large room is full of cubicles with chest-high dividers. The office is full of people, mostly sitting at desks, but they stare motionlessly at computer screens or shuffle about mindlessly carrying papers, not reacting to your presence. On one side of the room, a doorway opens to a dark staircase going down. The door leading to the staircase appears to have been knocked off the hinges from the inside. Doors exit the office to the north, south, and west.</Zone>
-    <Zone Name="a #GYM" IsDark="False">[gym text]</Zone>
-    <Zone Name="an indoor #POOL" IsDark="False">[pool text]</Zone>
+    <Zone Name="a #GYM" IsDark="False">The concrete walls are covered in fitness posters and various types of exercise equipment stand around the room. Someone didn't put their free weights back on the rack. The office is to the east, and double doors with large windows to the north appear to lead to a swimming pool.</Zone>
+    <Zone Name="an indoor #POOL" IsDark="False">A familiar chlorine scent fills the humid air. There is nothing remarkable in this room, except perhaps the large circular object deep near the bottom of the pool. The pool seems clean and well-maintained, and about 12 cubits deep. Wait, you don't know what cubits are. Why did you think of the 18-foot-deep pool in cubits?</Zone>
     <Zone Name="#UNDERWATER" IsDark="False">[underwater text]</Zone>
     <Zone Name="a dark and ominous #STAIRCASE" IsDark="True">It is too dark to see anything. Your light source seems to have no effect.</Zone>
     <Zone Name="an #ALLEYWAY" IsDark="False">[alleyway text]</Zone>
