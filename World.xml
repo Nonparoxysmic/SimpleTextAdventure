@@ -25,7 +25,7 @@
     <Zone Name="#UNDERWATER" IsDark="False">After diving underwater, you can see tropical fish darting around you that weren't there when you were above the surface. A large brass bathysphere is mounted on the wall of the pool near the bottom. Through a circular window in the bathysphere you see yourself, or someone who looks identical to you. They stare at you in horror, and flee through a hatch inside the bathysphere whenever you approach.</Zone>
     <Zone Name="a dark and ominous #STAIRCASE" IsDark="True">It is too dark to see anything. Your light source seems to have no effect.</Zone>
     <Zone Name="an #ALLEYWAY" IsDark="False">[alleyway text]</Zone>
-    <Zone Name="a #GREENHOUSE" IsDark="False">[greenhouse text]</Zone>
+    <Zone Name="a #GREENHOUSE" IsDark="True">[greenhouse text]</Zone>
     <Zone Name="a #CHAPEL" IsDark="False">[chapel text]</Zone>
     <Zone Name="a #CRYPT" IsDark="False">[crypt text]</Zone>
     <Zone Name="some #CATACOMBS" IsDark="False">[catacombs text]</Zone>
