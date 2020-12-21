@@ -26,9 +26,9 @@
     <Zone Name="a dark and ominous #STAIRCASE" IsDark="True">It is too dark to see anything. Your light source seems to have no effect.</Zone>
     <Zone Name="an #ALLEYWAY" IsDark="False">The concrete is wet from rain but the night sky is clear. The allyway is surrounded by brick buildings on three sides, and a tall chain link fence between you and a street. You can see what appear to be multiple wolves walking around on the street, watching you but not becoming aggressive unless you approach the fence. The ground is littered with trash and in one corner there is a small greenhouse with dirty opaque windows. A fire escape ladder leads up to an open window with a light on. Doors lead into the buildings to the north, south, and east.</Zone>
     <Zone Name="a #GREENHOUSE" IsDark="True">The greenhouse is pitch black in the night, and probably wouldn't be much brighter in the day in the shadows of these buildings. The garden beds are bare dirt, except for one small shriveled dead plant. A plastic bottle appears to have been set up as a drip irrigation device, but it is empty.</Zone>
-    <Zone Name="a #CHAPEL" IsDark="False">[chapel text]</Zone>
-    <Zone Name="a #CRYPT" IsDark="False">[crypt text]</Zone>
-    <Zone Name="some #CATACOMBS" IsDark="False">[catacombs text]</Zone>
+    <Zone Name="a #CHAPEL" IsDark="False">Colorful sunlight streams in through stained glass windows. This seems like a typical chapel but the symbols and imagery are unfamiliar to you. There are exits to the north, east, and west, and behind the pulpit a door in the floor reveals a stone staircase down.</Zone>
+    <Zone Name="a #CRYPT" IsDark="True">The air is cold and the stone block walls are rather primitive. The rooms are filled with coffins and tombs of a wide range of ages. Behind locked iron bars, another set of stairs lead further down.</Zone>
+    <Zone Name="some #CATACOMBS" IsDark="True">This maze of tunnels is roughly carved out of the solid stone. Every available nook is filled with bones, and there is water standing in some places. Are you hearing something else down here, or are your ears playing tricks on you?</Zone>
     <Zone Name="a #GARAGE" IsDark="False">[garage text]</Zone>
     <Zone Name="some #BARRACKS" IsDark="False">[barracks text]</Zone>
     <Zone Name="a #BEDROOM" IsDark="False">[bedroom text]</Zone>
@@ -44,6 +44,7 @@
   <Items>
     <Item Name="a typed #NOTE" StartLocation="CHAMBER" Type="X">A sheet of paper with typed text: "Instructions: (1) Pick up the scepter. (2) Walk through the archway. (3) You should find yourself within 100 meters of the archway. Observe your surroundings and find the archway. IMPORTANT: DO NOT touch or pick up anything. DO NOT enter any structure. (4) Carry the scepter through the archway again."</Item>
     <Item Name="a strange #SCEPTER" StartLocation="CHAMBER" Type="X">A strange looking scepter with a red gem.</Item>
+    <Item Name="an antique #KEY" StartLocation="CRYPT" Type="Key">A very old key.</Item>
   </Items>
   <ZoneConnections>
     <Connection Start="CHAMBER" Direction="In" End="SOUTH" OneWay="True" />
@@ -83,7 +84,7 @@
     <Connection Start="CHAPEL" Direction="North" End="GARAGE" />
     <Connection Start="CHAPEL" Direction="East" End="BARRACKS" />
     <Connection Start="CHAPEL" Direction="Down" End="CRYPT" />
-    <Connection Start="CRYPT" Direction="Down" End="CATACOMBS" />
+    <Connection Start="CRYPT" Direction="Down" End="CATACOMBS" Key="KEY" />
     <Connection Start="WORKSHOP" Direction="South" End="LABORATORY" />
     <Connection Start="LABORATORY" Direction="South" End="HALL" />
     <Connection Start="HALL" Direction="South" End="LIBRARY" />
