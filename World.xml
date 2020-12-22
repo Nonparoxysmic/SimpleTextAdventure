@@ -29,8 +29,8 @@
     <Zone Name="a #CHAPEL" IsDark="False">Colorful sunlight streams in through stained glass windows. This seems like a typical chapel but the symbols and imagery are unfamiliar to you. There are exits to the north, east, and west, and behind the pulpit a door in the floor reveals a stone staircase down.</Zone>
     <Zone Name="a #CRYPT" IsDark="True">The air is cold and the stone block walls are rather primitive. The rooms are filled with coffins and tombs of a wide range of ages. Behind locked iron bars, another set of stairs lead further down.</Zone>
     <Zone Name="some #CATACOMBS" IsDark="True">This maze of tunnels is roughly carved out of the solid stone. Every available nook is filled with bones, and there is water standing in some places. Are you hearing something else down here, or are your ears playing tricks on you?</Zone>
-    <Zone Name="a #GARAGE" IsDark="False">[garage text]</Zone>
-    <Zone Name="some #BARRACKS" IsDark="False">[barracks text]</Zone>
+    <Zone Name="a #GARAGE" IsDark="False">The concrete walls and florescent lights remind you of the test chamber. In one corner there are some luxury and classic cars of different varieties. They all look very expensive. But most of the garage is empty. Tire tracks on the painted floor indicate the movement of vehicles with treads and heavy trucks. The apparent exit seems to be collapsed. It is completely blocked by concrete rubble.</Zone>
+    <Zone Name="some #BARRACKS" IsDark="False">This windowless room has evidence of a militarized prescence. There are beds and lockers for soldiers, and empty racks for weapons. Paraphernalia around the room has the same symbology as the chapel. There are some unsettling propaganda posters around the room demonizing an unnamed enemy.</Zone>
     <Zone Name="a #BEDROOM" IsDark="False">[bedroom text]</Zone>
     <Zone Name="a #CLOSET" IsDark="False">[closet text]</Zone>
     <Zone Name="a #BATHROOM" IsDark="False">[bathroom text]</Zone>
