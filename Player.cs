@@ -79,6 +79,20 @@ namespace SimpleTextAdventure
                                 return;
                             }
                         }
+                        else if (currentZone.codeName == "library" && direction == Direction.In)
+                        {
+                            bool holdingScepter = inventory.Find(x => x.codeName == "scepter") != default;
+                            if (holdingScepter)
+                            {
+                                inventory.Remove(inventory.Find(x => x.codeName == "scepter"));
+                                Program.PrintWrappedText("[END GAME TEXT TO BE ADDED]");
+                            }
+                            else
+                            {
+                                Program.PrintWrappedText("You walk through the archway. You remain in the same room.");
+                                return;
+                            }
+                        }
 
                         Program.PrintWrappedText("You move " + direction + ". ");
                         currentZone = currentZone.exits[direction];

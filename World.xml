@@ -36,7 +36,7 @@
     <Zone Name="a #BATHROOM" IsDark="False">[bathroom text]</Zone>
     <Zone Name="a #BALCONY" IsDark="False">[balcony text]</Zone>
     <Zone Name="a #HALL" IsDark="False">[bedroom text]</Zone>
-    <Zone Name="a #LIBRARY" IsDark="False">[library text]</Zone>
+    <Zone Name="a #LIBRARY" IsDark="False">This fine room of polished wood and marble floors was filled wall to wall with shelves of books. Was. It looks like some kind of pressure wave threw all the bookcases to the edges of the room. Standing in the center of the circle of fallen shelves is the stone archway that brought you to this place.</Zone>
     <Zone Name="a #LABORATORY" IsDark="False">[laboratory text]</Zone>
     <Zone Name="a #WORKSHOP" IsDark="False">[workshop text]</Zone>
   </Zones>
@@ -93,5 +93,6 @@
     <Connection Start="BEDROOM" Direction="In" End="CLOSET" />
     <Connection Start="BEDROOM" Direction="South" End="BALCONY" />
     <Connection Start="BALCONY" Direction="Down" End="ATRIUM" OneWay="True" />
+    <Connection Start="LIBRARY" Direction="In" End="CHAMBER" OneWay="True" />
   </ZoneConnections>
 </Root>
