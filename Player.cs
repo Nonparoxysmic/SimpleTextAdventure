@@ -10,6 +10,7 @@ namespace SimpleTextAdventure
         public Zone currentZone;
         public List<Item> inventory = new List<Item>();
         public bool hasLightSource;
+        public bool hasUsedRopeOnBalcony;
 
         public Player(string name, Zone startingZone)
         {
@@ -93,9 +94,29 @@ namespace SimpleTextAdventure
                                 return;
                             }
                         }
-
+                        else if (currentZone.codeName == "balcony" && direction == Direction.Down && !hasUsedRopeOnBalcony)
+                        {
+                            inventory.Remove(inventory.Find(x => x.codeName == "rope"));
+                            Program.PrintWrappedText("You tie one end of the rope to the balcony railing and toss the line down to the atrium floor below.");
+                            currentZone.exits[Direction.Down].AddExit(Direction.Up, currentZone);
+                            hasUsedRopeOnBalcony = true;
+                        }
+                        
                         Program.PrintWrappedText("You move " + direction + ". ");
-                        currentZone = currentZone.exits[direction];
+
+                        if (currentZone.codeName == "alleyway" && direction == Direction.Up)
+                        {
+                            Program.PrintWrappedText("After you climb up the fire escape, the rusty hinges give way and the ladder falls to the ground far below.");
+                            currentZone.examineText[0] = currentZone.examineText[0].Substring(0, currentZone.examineText[0].Length - 64) + "A fire escape ladder lies on the ground.";
+                            Zone alleyway = currentZone;
+                            currentZone = currentZone.exits[direction];
+                            alleyway.exits.Remove(direction);
+                        }
+                        else
+                        {
+                            currentZone = currentZone.exits[direction];
+                        }
+
                         Program.PrintWrappedText("You arrive at " + currentZone.name + ".");
                         if (!currentZone.playerHasVisited)
                         {
