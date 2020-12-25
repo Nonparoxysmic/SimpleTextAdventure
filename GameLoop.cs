@@ -26,8 +26,7 @@ namespace SimpleTextAdventure
             Program.PrintWrappedText("You are in " + player.currentZone.name + ".");
             player.currentZone.PrintExamineText(player.hasLightSource);
             
-            bool gameOver = false;
-            while (!gameOver)
+            while (true)
             {
                 commandNumber++;
                 Console.Write(Environment.NewLine + "[" + commandNumber + "] > ");
@@ -56,8 +55,7 @@ namespace SimpleTextAdventure
                     case Command.Wait:
                         if (player.currentZone.codeName == "underwater")
                         {
-                            Program.PrintWrappedText("You drown.");
-                            gameOver = true;
+                            Program.GameOver(1);
                         }
                         else
                         {
@@ -83,13 +81,7 @@ namespace SimpleTextAdventure
                         Program.PrintWrappedText("Unrecognized command. Type \"help\" for a list of commands.");
                         break;
                 }
-
-                // Check for game end conditions here
-                
             }
-
-            Console.Write(Environment.NewLine + "GAME OVER" + Environment.NewLine + "Press any key to exit");
-            Console.ReadKey(true);
         }
         
         void PrintGameHelp(Parameter[] parameters)

@@ -9,7 +9,7 @@ namespace SimpleTextAdventure
     {
         public static string gameName = "SimpleTextAdventure";
         public static string gameAuthor = "Nonparoxysmic";
-        public static string gameVersion = "Alpha 0.1_33";
+        public static string gameVersion = "Alpha 0.1_34";
 
         static readonly string wrappingIndent = "  ";
         static readonly bool indentFirstLine = false;
@@ -234,6 +234,27 @@ namespace SimpleTextAdventure
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Program.PrintWrappedText("ERROR: " + message);
             Program.PrintWrappedText("Press any key to exit.");
+            Console.ReadKey(true);
+            Environment.Exit(0);
+        }
+
+        public static void GameOver(int ending)
+        {
+            switch (ending)
+            {
+                case 1:
+                    // Waiting underwater
+                    Program.PrintWrappedText("You drown.");
+                    break;
+                case 2:
+                    // Going too deep down staircase
+                    Program.PrintWrappedText("As you continue down the stairs, you hear something on the flight below suddenly and ferociously charging up toward you. You barely have time to react as teeth and claws tear into your flesh.");
+                    break;
+                default:
+                    break;
+            }
+
+            Console.Write(Environment.NewLine + "GAME OVER" + Environment.NewLine + "Press any key to exit");
             Console.ReadKey(true);
             Environment.Exit(0);
         }

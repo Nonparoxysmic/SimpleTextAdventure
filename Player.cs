@@ -11,6 +11,7 @@ namespace SimpleTextAdventure
         public List<Item> inventory = new List<Item>();
         public bool hasLightSource;
         public bool hasUsedRopeOnBalcony;
+        public int staircaseDepth;
 
         public Player(string name, Zone startingZone)
         {
@@ -85,8 +86,9 @@ namespace SimpleTextAdventure
                             bool holdingScepter = inventory.Find(x => x.codeName == "scepter") != default;
                             if (holdingScepter)
                             {
-                                inventory.Remove(inventory.Find(x => x.codeName == "scepter"));
+                                // TODO: End of game
                                 Program.PrintWrappedText("[END GAME TEXT TO BE ADDED]");
+                                Program.GameOver(0);
                             }
                             else
                             {
@@ -118,6 +120,32 @@ namespace SimpleTextAdventure
                         }
 
                         Program.PrintWrappedText("You arrive at " + currentZone.name + ".");
+
+                        if (currentZone.codeName == "staircase" && direction == Direction.Down)
+                        {
+                            staircaseDepth++;
+                            if (staircaseDepth > 6)
+                            {
+                                Program.GameOver(2);
+                            }
+                            else if (staircaseDepth == 6 && hasLightSource)
+                            {
+                                Program.PrintWrappedText("Suddenly a chill runs through your body. You thought you saw a ghostly face out of the corner of your eye but when you looked you didn't see it. You feel like you are being watched.");
+                            }
+                            else if (staircaseDepth == 6)
+                            {
+                                Program.PrintWrappedText("Suddenly a chill runs through your body. You hear the voice of a small child somewhere further down the stairs, weakly crying for help.");
+                            }
+                        }
+                        else if (currentZone.codeName == "office" && direction == Direction.Up)
+                        {
+                            if (staircaseDepth > 1)
+                            {
+                                Program.PrintWrappedText("The trip back up the staircase was shorter than the distance you went down.");
+                            }
+                            staircaseDepth = 0;
+                        }
+
                         if (!currentZone.playerHasVisited)
                         {
                             currentZone.PrintExamineText(hasLightSource);
