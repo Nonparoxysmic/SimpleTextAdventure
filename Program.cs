@@ -9,7 +9,7 @@ namespace SimpleTextAdventure
     {
         public static string gameName = "SimpleTextAdventure";
         public static string gameAuthor = "Nonparoxysmic";
-        public static string gameVersion = "Alpha 0.1_34";
+        public static string gameVersion = "Alpha 0.1_35";
 
         static readonly string wrappingIndent = "  ";
         static readonly bool indentFirstLine = false;
@@ -47,8 +47,9 @@ namespace SimpleTextAdventure
 
             string[] introText = worldData.Element("Introduction").Value.Split('|');
 
-            Player player = new Player("Tabula Rasa", startingZone);
+            Player player = new Player(startingZone);
             GameLoop gameLoop = new GameLoop(player, introText);
+            player.gameLoop = gameLoop;
 
             List<XElement> itemData = worldData.Elements().FirstOrDefault(x => x.Name == "Items").Elements().ToList();
             List<Item> itemsForItemReferences = new List<Item>();
@@ -248,7 +249,11 @@ namespace SimpleTextAdventure
                     break;
                 case 2:
                     // Going too deep down staircase
-                    Program.PrintWrappedText("As you continue down the stairs, you hear something on the flight below suddenly and ferociously charging up toward you. You barely have time to react as teeth and claws tear into your flesh.");
+                    Program.PrintWrappedText("As you continue down the stairs, you hear what sounds like a large creature on the flight below suddenly and ferociously begin charging up toward you. You barely have time to react as teeth and claws tear into your flesh.");
+                    break;
+                case 3:
+                    // Waiting in the bedroom
+                    Program.PrintWrappedText("You stop and wait. Eventually the person on the ceiling notices you. You suddenly feel gravity reverse as the person cries out in panic, and you find yourself falling headfirst up (or is it down?) to your death.");
                     break;
                 default:
                     break;

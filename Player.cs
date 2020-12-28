@@ -6,16 +6,15 @@ namespace SimpleTextAdventure
 {
     class Player
     {
-        public string name;
+        public GameLoop gameLoop;
         public Zone currentZone;
         public List<Item> inventory = new List<Item>();
         public bool hasLightSource;
         public bool hasUsedRopeOnBalcony;
         public int staircaseDepth;
 
-        public Player(string name, Zone startingZone)
+        public Player(Zone startingZone)
         {
-            this.name = name;
             currentZone = startingZone;
             currentZone.playerHasVisited = true;
         }
@@ -72,7 +71,7 @@ namespace SimpleTextAdventure
                             bool holdingScepter = inventory.Find(x => x.codeName == "scepter") != default;
                             if (holdingScepter)
                             {
-                                inventory.Remove(inventory.Find(x => x.codeName == "scepter"));
+                                gameLoop.RemoveItemFromPlayer(inventory.Find(x => x.codeName == "scepter"), this);
                                 Program.PrintWrappedText("The scepter disappears from your hands and the world changes around you as you walk through the archway.");
                             }
                             else
@@ -98,7 +97,7 @@ namespace SimpleTextAdventure
                         }
                         else if (currentZone.codeName == "balcony" && direction == Direction.Down && !hasUsedRopeOnBalcony)
                         {
-                            inventory.Remove(inventory.Find(x => x.codeName == "rope"));
+                            gameLoop.RemoveItemFromPlayer(inventory.Find(x => x.codeName == "rope"), this);
                             Program.PrintWrappedText("You tie one end of the rope to the balcony railing and toss the line down to the atrium floor below.");
                             currentZone.exits[Direction.Down].AddExit(Direction.Up, currentZone);
                             hasUsedRopeOnBalcony = true;
@@ -149,10 +148,10 @@ namespace SimpleTextAdventure
                         if (!currentZone.playerHasVisited)
                         {
                             currentZone.PrintExamineText(hasLightSource);
-                            if (!currentZone.isDark || hasLightSource)
-                            {
-                                currentZone.playerHasVisited = true;
-                            }
+                            //if (!currentZone.isDark || hasLightSource)
+                            //{
+                            //    currentZone.playerHasVisited = true;
+                            //}
                         }
                     }
                     else
@@ -433,6 +432,8 @@ namespace SimpleTextAdventure
                     if (target.itemParameter.type == "Light")
                     {
                         hasLightSource = (target.itemParameter as Light).isActive;
+                        if (currentZone.isDark && !currentZone.playerHasVisited)
+                            currentZone.PrintExamineText(hasLightSource);
                     }
                 }
                 else

@@ -57,6 +57,10 @@ namespace SimpleTextAdventure
                         {
                             Program.GameOver(1);
                         }
+                        else if (player.currentZone.codeName == "bedroom")
+                        {
+                            Program.GameOver(3);
+                        }
                         else
                         {
                             Program.PrintWrappedText("You wait. Nothing interesting happens.");
@@ -82,6 +86,12 @@ namespace SimpleTextAdventure
                         break;
                 }
             }
+        }
+
+        public void RemoveItemFromPlayer(Item item, Player player)
+        {
+            inactiveItems.Add(item);
+            player.inventory.Remove(item);
         }
         
         void PrintGameHelp(Parameter[] parameters)
