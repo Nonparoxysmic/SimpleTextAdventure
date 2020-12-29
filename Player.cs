@@ -99,6 +99,8 @@ namespace SimpleTextAdventure
                         {
                             gameLoop.RemoveItemFromPlayer(inventory.Find(x => x.codeName == "rope"), this);
                             Program.PrintWrappedText("You tie one end of the rope to the balcony railing and toss the line down to the atrium floor below.");
+                            currentZone.examineText[0] += " One end of a rope is tied to the railing, with the rest dangling down to the atrium floor below, allowing you to climb down.";
+                            currentZone.exits[Direction.Down].examineText[0] += " A rope hangs down from a balcony above. You might be able to climb up.";
                             currentZone.exits[Direction.Down].AddExit(Direction.Up, currentZone);
                             hasUsedRopeOnBalcony = true;
                         }
