@@ -44,9 +44,11 @@
   <Items>
     <Item Name="a typed #NOTE" StartLocation="CHAMBER" Type="X">A sheet of paper with typed text: "Instructions: (1) Pick up the scepter. (2) Walk through the archway. (3) You should find yourself within 100 meters of the archway. Observe your surroundings and find the archway. IMPORTANT: DO NOT touch or pick up anything. DO NOT enter any structure. (4) Carry the scepter through the archway again."</Item>
     <Item Name="a strange #SCEPTER" StartLocation="CHAMBER" Type="X">A strange looking scepter with a red gem.</Item>
-    <Item Name="~test item #LIGHT" StartLocation="CHAMBER" Type="Light" ActivateMessage="~light on" DeactivateMessage="~light off">[light off description]|[light on description]</Item>
+    <Item Name="a #KEYCARD" StartLocation="OFFICE" Type="Key">A plastic card with a magnetic strip.</Item>
+    <Item Name="an antique #KEY" StartLocation="UNDERWATER" Type="Key">A very old key.</Item>
     <Item Name="a length of #ROPE" StartLocation="CLOSET" Type="Key">About 50 feet of a thick synthetic rope.</Item>
-    <Item Name="an antique #KEY" StartLocation="CRYPT" Type="Key">A very old key.</Item>
+    <Item Name="a shattered #VIAL" StartLocation="LABORATORY" Type="X">A broken glass vial, only held together by the label.</Item>
+    <Item Name="a #FLASHLIGHT" StartLocation="LABORATORY" Type="Light" ActivateMessage="You turn on the flashlight." DeactivateMessage="You turn off the flashlight.">A small waterproof flashlight.|A small waterproof flashlight, shining brightly.</Item>
   </Items>
   <ZoneConnections>
     <Connection Start="CHAMBER" Direction="In" End="SOUTH" OneWay="True" />
@@ -88,7 +90,7 @@
     <Connection Start="CHAPEL" Direction="Down" End="CRYPT" />
     <Connection Start="CRYPT" Direction="Down" End="CATACOMBS" Key="KEY" />
     <Connection Start="WORKSHOP" Direction="South" End="LABORATORY" />
-    <Connection Start="LABORATORY" Direction="South" End="HALL" />
+    <Connection Start="LABORATORY" Direction="South" End="HALL" Key="KEYCARD" />
     <Connection Start="HALL" Direction="South" End="LIBRARY" />
     <Connection Start="HALL" Direction="West" End="BEDROOM" />
     <Connection Start="BEDROOM" Direction="West" End="BATHROOM" />

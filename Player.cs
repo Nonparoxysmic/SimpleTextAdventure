@@ -355,6 +355,11 @@ namespace SimpleTextAdventure
             {
                 Program.PrintWrappedText("Not a valid target.");
             }
+
+            if (inventory.Find(x => x.codeName == "vial") != default)
+            {
+                Program.GameOver(4);
+            }
         }
 
         public void DropAction(Parameter[] parameters)

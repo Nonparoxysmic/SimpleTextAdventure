@@ -9,7 +9,7 @@ namespace SimpleTextAdventure
     {
         public static string gameName = "SimpleTextAdventure";
         public static string gameAuthor = "Nonparoxysmic";
-        public static string gameVersion = "Alpha 0.1_38";
+        public static string gameVersion = "Alpha 0.1_39";
 
         static readonly string wrappingIndent = "  ";
         static readonly bool indentFirstLine = false;
@@ -254,6 +254,10 @@ namespace SimpleTextAdventure
                 case 3:
                     // Waiting in the bedroom
                     Program.PrintWrappedText("You stop and wait. Eventually the person on the ceiling notices you. You suddenly feel gravity reverse as the person cries out in panic, and you find yourself falling headfirst up (or is it down?) to your death.");
+                    break;
+                case 4:
+                    // Picking up the vial
+                    Program.PrintWrappedText("You pick up the broken pieces of the glass vial. As you notice a biohazard symbol on the label, a drop of liquid drips from the broken glass onto your skin. You panic and wash your hands as soon as you can, but it is too late. You expire a short time later.");
                     break;
                 default:
                     break;
