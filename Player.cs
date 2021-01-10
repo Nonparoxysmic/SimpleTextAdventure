@@ -85,8 +85,6 @@ namespace SimpleTextAdventure
                             bool holdingScepter = inventory.Find(x => x.codeName == "scepter") != default;
                             if (holdingScepter)
                             {
-                                // TODO: End of game
-                                Program.PrintWrappedText("[END GAME TEXT TO BE ADDED]");
                                 Program.GameOver(0);
                             }
                             else

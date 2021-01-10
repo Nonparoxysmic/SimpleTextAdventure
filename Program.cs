@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Xml.Linq;
 
 namespace SimpleTextAdventure
@@ -9,7 +10,7 @@ namespace SimpleTextAdventure
     {
         public static string gameName = "SimpleTextAdventure";
         public static string gameAuthor = "Nonparoxysmic";
-        public static string gameVersion = "Alpha 0.1_39";
+        public static string gameVersion = "Alpha 0.2";
 
         static readonly string wrappingIndent = "  ";
         static readonly bool indentFirstLine = false;
@@ -243,6 +244,13 @@ namespace SimpleTextAdventure
         {
             switch (ending)
             {
+                case 0:
+                    // Winning the game
+                    Console.WriteLine(Environment.NewLine + "..." + Environment.NewLine);
+                    Program.PrintWrappedText("You step through the archway and once again the world changes around you. You're back in the test chamber where this ordeal began. You drop to your knees in relief, tossing the scepter aside.");
+                    Console.WriteLine();
+                    Program.PrintWrappedText(" ~~ Thanks for playing. That's all I've got for now. Did you find all 4 ways to die? ~~");
+                    break;
                 case 1:
                     // Waiting underwater
                     Program.PrintWrappedText("You drown.");
@@ -263,7 +271,10 @@ namespace SimpleTextAdventure
                     break;
             }
 
-            Console.Write(Environment.NewLine + "GAME OVER" + Environment.NewLine + "Press any key to exit");
+            Console.WriteLine();
+            Console.WriteLine(" GAME OVER ");
+            Thread.Sleep(2000);
+            Console.Write("Press any key to exit");
             Console.ReadKey(true);
             Environment.Exit(0);
         }
